@@ -4,6 +4,12 @@ dataRequest.addEventListener("error", dataRequestFailed);
 dataRequest.open("GET", "food.json");
 dataRequest.send();
 
+let dataRequest1 = new XMLHttpRequest();
+dataRequest1.addEventListener("load", dataRequestComplete);
+dataRequest1.addEventListener("error", dataRequestFailed);
+dataRequest1.open("GET", "cat.json");
+dataRequest1.send();
+
 function dataRequestComplete(e) {
 	console.log("foods have loaded");
 	var foodData = JSON.parse(e.target.responseText);
@@ -45,8 +51,3 @@ function dataRequestFailed(e) {
 
 
 
-let dataRequest1 = new XMLHttpRequest();
-dataRequest1.addEventListener("load", dataRequestComplete);
-dataRequest1.addEventListener("error", dataRequestFailed);
-dataRequest1.open("GET", "cat.json");
-dataRequest1.send();
