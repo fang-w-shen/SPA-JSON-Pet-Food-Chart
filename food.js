@@ -1,7 +1,8 @@
 let dataRequest = new XMLHttpRequest();
-
 dataRequest.addEventListener("load", dataRequestComplete);
 dataRequest.addEventListener("error", dataRequestFailed);
+dataRequest.open("GET", "food.json");
+dataRequest.send();
 
 function dataRequestComplete(e) {
 	console.log("foods have loaded");
@@ -13,46 +14,38 @@ function dataRequestComplete(e) {
 
 function showData(foods) {
 	let brandDiv = document.getElementById("brands");
-	let breedDiv = document.getElementById("breeds");
-	let typeDiv = document.getElementById("types");
 	let brand = '';
-	let breed = '';
-	let type = '';
 
 	for (item in foods) {
 		let foodItem = foods[item];
 		debugger;
+
 		for(var i=0; i<foods[item].length;i++) {
 			brand += "<tr>";
 			brand += `<th rowspan='3'>` + foodItem[i].name + "</th><tr>";
 		
 			for (var j=0; j<foodItem[i].types.length; j++)	{
-			
 				brand += "<td>"+foodItem[i].types[j].type + "</td>";
+
 				for (var z=0; z<foodItem[i].types[j].volumes.length; z++)	{
-			
-					brand += "<td>"+foodItem[i].types[j].volumes[z].name + ": $" +foodItem[i].types[j].volumes[z].price+"    </td>";
+					brand += "<td>"+foodItem[i].types[j].volumes[z].name + ": $" +foodItem[i].types[j].volumes[z].price+"</td>";
 					
 				}
-				brand +="</tr>";
+			brand +="</tr></tr>";
 			}
-			
 		}
-		
-	}brand+= "</tr>";
-
-	brandDiv.innerHTML += brand;	
+	brandDiv.innerHTML += brand;
+	}
 }
 	
-
 function dataRequestFailed(e) {
 	console.log("dataFailed", e);	
 }
-dataRequest.open("GET", "food.json");
-dataRequest.send();
+
+
+
 
 let dataRequest1 = new XMLHttpRequest();
-
 dataRequest1.addEventListener("load", dataRequestComplete);
 dataRequest1.addEventListener("error", dataRequestFailed);
 dataRequest1.open("GET", "cat.json");
