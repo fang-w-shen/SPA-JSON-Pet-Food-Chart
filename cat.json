@@ -1,0 +1,66 @@
+{
+  "dog_brands": [
+    {
+      "name": "MeowMix",
+      "types": [
+        {
+          "type": "large",
+          "volumes": [
+            {
+              "name": "32oz",
+              "price": 1
+            },
+            {
+              "name": "64oz",
+              "price": 2
+            }
+          ]
+        },
+        {
+          "type": "standard",
+          "volumes": [
+            {
+              "name": "58oz",
+              "price": 3
+            },
+            {
+              "name": "72oz",
+              "price": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Weruva",
+      "types": [
+        {
+          "type": "Kitty",
+          "volumes": [
+            {
+              "name": "16oz",
+              "price": 5
+            },
+            {
+              "name": "24oz",
+              "price": 6
+            }
+          ]
+        },
+        {
+          "type": "standard",
+          "volumes": [
+            {
+              "name": "58oz",
+              "price": 7
+            },
+            {
+              "name": "72oz",
+              "price": 8
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
